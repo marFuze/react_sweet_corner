@@ -12,6 +12,10 @@ const App = () => (
    <div className='app'>
        <div className='container'>
            <Header/>
+           <Route path='/about' component={About} />
+           <Route path='/contact' component={Contact} />
+           <Route path='/home' component={Home} />
+           <Route path='/services' component={Services} />
            <Footer/>
        </div>
    </div>
