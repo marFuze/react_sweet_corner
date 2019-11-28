@@ -7,12 +7,13 @@ import Logo from './logo';
 
 export default props => {
     return (
-        <div className='allura'>
+        <div >
         <Header_img />
         <Nav />
         <Logo />
 
-            <h1 className='center'>This is the Header</h1>
+            <h1 className='mission_statement'>We deliver cupcakes for the important events in your life!</h1>
+            <hr></hr>
         </div>
     );
 }

@@ -1,9 +1,13 @@
 .main-nav {
-    position: relative;
-    left: 700px;
+    position: absolute;
+    right: 150px;
+    display: inline;
+    text-decoration: none;
 
     li {
+        font-family: sans-serif;
         display: inline;
         padding: 10px;
+        
     }
 }

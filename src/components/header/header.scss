@@ -4,11 +4,16 @@
 }
 
 body {
-    .allura {
+    color: #754b23;
+    text-align: center;
+
+    .mission_statement {
         font-family: allura;
     }
 
-    .logo {
-        text-align: center;
+    hr {
+        background-color: #754b23;
+        width: 100%;
+        height: 24px;
     }
 }
