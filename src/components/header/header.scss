@@ -1,0 +1,14 @@
+@font-face {
+    font-family: allura;
+    src: url('../../assets/fonts/Allura-Regular.ttf');
+}
+
+body {
+    .allura {
+        font-family: allura;
+    }
+
+    .logo {
+        text-align: center;
+    }
+}
