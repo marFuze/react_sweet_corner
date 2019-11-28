@@ -1,0 +1,19 @@
+@font-face {
+    font-family: allura;
+    src: url('../../assets/fonts/Allura-Regular.ttf');
+}
+
+body {
+    color: #754b23;
+    text-align: center;
+
+    .mission_statement {
+        font-family: allura;
+    }
+
+    hr {
+        background-color: #754b23;
+        width: 100%;
+        height: 24px;
+    }
+}
