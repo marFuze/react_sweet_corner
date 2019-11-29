@@ -1,13 +1,20 @@
-.main-nav {
-    position: absolute;
-    right: 150px;
-    display: inline;
-    text-decoration: none;
-
+.nav {
+    position: relative;
+    left: 250px;
+    
     li {
-        font-family: sans-serif;
-        display: inline;
-        padding: 10px;
+      display: inline-block;
+      text-transform: capitalize;
+      text-align: center;
+      text-shadow: 1px 1px 3px darkgrey;
+      cursor: pointer;
+      font-family: sans-serif;
+      width: 10%;
+      text-decoration: none;
         
     }
+
+    li:hover {
+        color: orange;
+      }
 }

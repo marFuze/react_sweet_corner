@@ -6,7 +6,7 @@ import './nav.scss';
 export default props => {
     return (
         <div>
-            <ul className='main-nav'>
+            <ul className='nav'>
             <li>
                 <Link to='/'>Home</Link>
             </li>
