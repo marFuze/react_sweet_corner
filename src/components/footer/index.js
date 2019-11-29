@@ -7,9 +7,11 @@ export default props => {
 
     return (
         <div className='footer'>
-            <div>Sweetcorner.com</div>
-            <div>&copy;{year} all rights reserved.</div>
-            <div>800 264 2099</div>
+            <div className="dots"></div>
+
+            <div><p>&copy;{year} Sweetcorner.com.  All rights reserved.</p></div>
+
+            <div><p><i className="fa fa-phone"></i>800 264 2099</p></div>
 
         </div>
     );
