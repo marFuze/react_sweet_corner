@@ -21,14 +21,14 @@ class ContactForm extends React.Component {
 
                 <div className='row'>
                 <div className='field'>
-                    <Field name='Email' component='input' type='text' />
+                    <Field name='Email' component='input' type='email' />
                     <label>Email</label>
                 </div>
                 </div>
 
                 <div className='row'>
                 <div className='field'>
-                    <Field name='Phone' component='input' type='text' />
+                    <Field name='Phone' component='input' type='tel' />
                     <label>Phone</label>
                 </div>
                 </div>
@@ -48,7 +48,7 @@ class ContactForm extends React.Component {
                 </div>
 
                 <div className='row'>
-                    <button>Send Message</button>
+                    <button>Send</button>
                 </div>
 
             </form>

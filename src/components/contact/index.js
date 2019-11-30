@@ -1,10 +1,11 @@
 import React from 'react';
-import './contact.scss'
+import './contact.scss';
+import ContactForm from './contact_form';
 
 export default props => {
     return (
         <div>
-            <h1 className='center'>Contact Page</h1>
+            <ContactForm />
         </div>
     );
 }
