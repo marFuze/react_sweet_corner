@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 class ScheduleRow extends React.Component {
 
     render () {
-        const { day, time } = this.props;
+        const { day, pid } = this.props;
 
         return (
             <tr className="">
                 <td>{ day }</td>
-                <td>{ time} </td>
+                <td>{ pid } </td>
             </tr>
         );
     }
@@ -22,6 +22,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, {
-
-})(ScheduleRow);
+export default connect(mapStateToProps)(ScheduleRow);

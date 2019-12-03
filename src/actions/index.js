@@ -9,7 +9,7 @@ export function getScheduleData(){
 
         dispatch({
             type: types.GET_SCHEDULE_DATA,
-            schedules: resp.data
+            schedule: resp.data
         });
     }
 }

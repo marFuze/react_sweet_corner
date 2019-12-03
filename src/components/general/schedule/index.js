@@ -12,10 +12,11 @@ class ScheduleTable extends React.Component {
     render () {
 
     console.log('schedule table props:', this.props);
-    const { schedules } = this.props;
+    const { schedule } = this.props;
+    console.log('schedule prop:', schedule);
 
-    const rowElements = schedules.map((schedule, index) => {
-        return <ScheduleRow key={schedule.id} index={index} {...schedule} />
+    const rowElements = schedule.map((schedule, index) => {
+        return <ScheduleRow key={schedule.pid} index={index} {...schedule} />
     });
 
     return (
@@ -33,7 +34,7 @@ class ScheduleTable extends React.Component {
 
     function mapStateToProps(state){
         return {
-            schedules: state.schedules
+            schedule: state.schedule.list
         }
     }
 
