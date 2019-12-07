@@ -4,7 +4,7 @@ import scheduleReducer from './schedule-reducer';
 
 const rootReducer = combineReducers({
     form: formReducer,
-    schedule: scheduleReducer
+    schedules: scheduleReducer
 });
 
 export default rootReducer;

@@ -4,12 +4,16 @@ import { connect } from 'react-redux';
 class ScheduleRow extends React.Component {
 
     render () {
-        const { day, pid } = this.props;
+        const { close,day,open,pid } = this.props;
+
+        console.log("row this.props:", this.props);
 
         return (
             <tr className="">
-                <td>{ day }</td>
-                <td>{ pid } </td>
+                
+                <td>{ day } </td>
+                <td>{ open }</td>
+                <td>{ close }</td>
             </tr>
         );
     }
