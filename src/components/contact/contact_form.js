@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import Input from './input';
 
 class ContactForm extends React.Component {
     contactUs(fromValues){
@@ -12,12 +13,14 @@ class ContactForm extends React.Component {
             <div><h1>Contact Form</h1>
 
             <form onSubmit={handleSubmit(this.contactUs)}>
-                <div className='row'>
+                <Field name='name' component={Input} />
+
+                {/* <div className='row'>
                 <div className='field'>
                     <Field name='Name' component='input' type='text' />
                     <label>Name</label>
                 </div>
-                </div>
+                </div> */}
 
                 <div className='row'>
                 <div className='field'>

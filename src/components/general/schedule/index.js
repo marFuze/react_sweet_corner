@@ -11,9 +11,11 @@ class ScheduleTable extends React.Component {
 
     render () {
 
-     const { schedule } = this.props.schedules;
+    const { schedules } = this.props;
+    
+    //this.props && this.props.schedules.schedule && 
 
-    const rowElements = this.props && this.props.schedules.schedule && schedule.map((element, index) => {
+    const rowElements = schedules.map((element, index) => {
      
         return <ScheduleRow key={element.pid} index={index} {...element} />
     });
