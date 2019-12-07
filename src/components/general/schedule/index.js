@@ -9,30 +9,23 @@ class ScheduleTable extends React.Component {
         this.props.getScheduleData();
     }
 
-
     render () {
-   
-    //console.log('this.props',this.props.schedules);
 
      const { schedule } = this.props.schedules;
-
-
-   //console.log('schedule',schedule);
 
     const rowElements = this.props && this.props.schedules.schedule && schedule.map((element, index) => {
      
         return <ScheduleRow key={element.pid} index={index} {...element} />
     });
     
-    
     return (
         <table className=''>
             <thead>
-            <tr>
-                        <th>Day</th>
-                        <th>Open</th>
-                        <th>Close</th>
-                    </tr>
+                <tr>
+                    <th>Day</th>
+                    <th>Open</th>
+                    <th>Close</th>
+                </tr>
             </thead>
             <tbody>
                 {rowElements}
@@ -41,9 +34,7 @@ class ScheduleTable extends React.Component {
     );
     }
 }
-
     function mapStateToProps(state){
-        //console.log("state",state);
 
         return {
             schedules: state.schedules.list

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 class ScheduleRow extends React.Component {
 
     render () {
-        const { close,day,open,pid } = this.props;
+        const { close, day, open } = this.props;
 
         console.log("row this.props:", this.props);
 
