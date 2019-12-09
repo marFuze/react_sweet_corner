@@ -63,8 +63,35 @@ class ContactForm extends React.Component {
     }
 }
 
+function validate (fromValues){
+
+    const { name, email, phone, subject, message} = fromValues;
+    const errors = {};
+   if (!name){
+       errors.name = "Please enter a name."
+   }
+   
+   if (!email){
+    errors.email = "Please enter a email."
+    }   
+
+    if (!phone){
+    errors.phone = "Please enter a phone."
+    }
+
+    if (!subject){
+    errors.subject = "Please enter a subject."
+    }
+
+    if (!message){
+    errors.message = "Please enter a message."
+    }
+   return errors;
+}
+
 export default reduxForm({
-    form:'contact-form'
+    form:'contact-form',
+    validate: validate
 })(ContactForm);
 
 
