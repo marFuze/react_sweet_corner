@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './products.scss';
 import { getAllProducts } from '../../actions';
+import ProductItem from './product_item';
 
 class Products extends React.Component {
 
@@ -11,11 +12,16 @@ class Products extends React.Component {
 
     render () {
         const { products } = this.props;
-        console.log('products', products);
+        
+        const rowElements = products.map((product,index) => {
+            return <ProductItem key={product.id} {...product} />
+        });
+
         return (
         
                 <div className="products">
                 <h1>Our Products</h1>
+                {rowElements}
                 </div>
         
         )
