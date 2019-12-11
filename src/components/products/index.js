@@ -18,11 +18,12 @@ class Products extends React.Component {
         });
 
         return (
-        
-                <div className="products">
-                <h1>Our Products</h1>
-                {rowElements}
-                </div>
+            <div className='products-container'><h1>Our Products</h1>
+            <div className="products">
+            
+            {rowElements}
+            </div></div>
+            
         
         )
     }

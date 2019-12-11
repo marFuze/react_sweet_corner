@@ -1,11 +1,15 @@
-body {
-    text-align: center;
-    color: #754b23;
-    width: 80%;
-
-    .product-item {
-        display: inline-block;
-        margin: 20px;
+    .products-container {
+        color: #754b23;
+        text-align: center;
         
+        .products {
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            grid-auto-rows: minmax(100px, auto);
+
+
+            .product-item {}
+        }
     }
-}
