@@ -1,11 +1,24 @@
-body {
-    text-align: center;
-    color: #754b23;
-    width: 80%;
+    .products-container {
+        color: #754b23;
+        text-align: center;
 
-    .product-item {
-        display: inline-block;
-        margin: 20px;
+        .products {
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            grid-auto-rows: minmax(100px, auto);
+
+            .product-item {
+                background-color: rgb(227, 220, 211);
+                
+            }
+            .product-item:hover {
+                background-color: gold;
+                cursor: pointer;
+                
+            }
+
+        }
         
     }
-}
