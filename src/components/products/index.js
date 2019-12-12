@@ -6,6 +6,10 @@ import ProductItem from './product_item';
 
 class Products extends React.Component {
 
+    goToDetails (id) {
+        this.props.history.push('/products/${id}');
+    }
+
     componentDidMount() {
         this.props.getAllProducts();
     }
@@ -14,7 +18,7 @@ class Products extends React.Component {
         const { products } = this.props;
         
         const rowElements = products.map((product,index) => {
-            return <ProductItem key={product.id} {...product} />
+            return <ProductItem key={product.id} {...product} goToDetails={this.goToDetails.bind(this,product.id)}/>
         });
 
         return (

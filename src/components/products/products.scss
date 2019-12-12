@@ -1,7 +1,7 @@
     .products-container {
         color: #754b23;
         text-align: center;
-        
+
         .products {
             text-align: center;
             display: grid;
@@ -9,7 +9,16 @@
             grid-gap: 10px;
             grid-auto-rows: minmax(100px, auto);
 
+            .product-item {
+                background-color: rgb(227, 220, 211);
+                
+            }
+            .product-item:hover {
+                background-color: gold;
+                cursor: pointer;
+                
+            }
 
-            .product-item {}
         }
+        
     }
