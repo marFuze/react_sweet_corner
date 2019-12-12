@@ -3,8 +3,8 @@ import React from 'react';
 class ProductDetails extends React.Component {
     
     componentDidMount() {
-        console.log('Product Details Component Mounted')
-        console.log('id',this.props.match.params.product_id);
+        //console.log('Product Details Component Mounted')
+        //console.log('id',this.props.match.params.product_id);
     }
     
     render() {

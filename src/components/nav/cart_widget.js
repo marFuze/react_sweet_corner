@@ -1,7 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getCartTotals } from '../../actions';
 
 class CartWidget extends React.Component {
+
+    componentDidMount(){
+        this.props.getCartTotals();
+    }
+
     render () {
         return(
         <li className="cart-widget">
@@ -14,4 +21,13 @@ class CartWidget extends React.Component {
     }
 }
 
-export default CartWidget;
+function mapStateToProps(state){
+    console.log('cartwidget state:',state);
+    return {
+        
+    }
+}
+
+export default connect(mapStateToProps, {
+    getCartTotals: getCartTotals
+})(CartWidget);

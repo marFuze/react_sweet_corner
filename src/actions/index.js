@@ -29,3 +29,34 @@ export function getAllProducts(){
         }
     }
 }
+
+export function getCartTotals(){
+    return async function (dispatch) {
+        try {
+
+            console.log('Get cart totals action creator');
+
+            const cartToken = localStorage.getItem('sc-cart-token');
+
+            const axiosConfig = {
+                headers: {
+                    'x-cart-token': cartToken
+                }
+            }
+
+
+            const resp = await axios.get(BASE_URL + '/api/cart/totals',axiosConfig);
+
+
+            dispatch({
+                type: types.GET_CART_TOTALS,
+                total: resp.data.total
+            });
+
+            console.log('cart totals resp',resp);
+            
+        } catch(err) {
+            console.log('Error getting cart totals:', error);
+        }
+    }
+}
