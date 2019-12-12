@@ -7,7 +7,7 @@ import ProductItem from './product_item';
 class Products extends React.Component {
 
     goToDetails (id) {
-        this.props.history.push('/products/${id}');
+        this.props.history.push(`/products/${id}`);
     }
 
     componentDidMount() {
