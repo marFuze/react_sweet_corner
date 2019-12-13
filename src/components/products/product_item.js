@@ -2,7 +2,7 @@ import React from 'react';
 import Money from '../general/money'
 
 export default (props) => {
-    console.log('props',props);
+    //console.log('props',props);
     return (
         
         <div onClick={props.goToDetails} className="product-item">
