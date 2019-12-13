@@ -30,11 +30,27 @@ export function getAllProducts(){
     }
 }
 
+export function getProductDetails(productId){
+    return async function (dispatch) {
+        try {
+            const resp = await axios.get(`${BASE_URL}/api/products/${productId}`);
+
+            //console.log('Product Details Resp:', resp);
+            dispatch({
+                type: types.GET_PRODUCT_DETAILS,
+                product: resp.data
+            });
+        } catch(err) {
+            console.log('Error getting all products:', err);
+        }
+    }
+}
+
 export function getCartTotals(){
     return async function (dispatch) {
         try {
 
-            console.log('Get cart totals action creator');
+            //console.log('Get cart totals action creator');
 
             const cartToken = localStorage.getItem('sc-cart-token');
 
@@ -53,7 +69,7 @@ export function getCartTotals(){
                 total: resp.data.total
             });
 
-            console.log('cart totals resp',resp);
+            //console.log('cart totals resp',resp);
             
         } catch(err) {
             console.log('Error getting cart totals:', error);

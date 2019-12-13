@@ -22,7 +22,7 @@ class CartWidget extends React.Component {
 }
 
 function mapStateToProps(state){
-    console.log('cartwidget state:',state);
+    //console.log('cartwidget state:',state);
     return {
         
     }

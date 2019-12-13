@@ -18,7 +18,7 @@ class Products extends React.Component {
         const { products } = this.props;
         
         const rowElements = products.map((product,index) => {
-            return <ProductItem key={product.id} {...product} goToDetails={this.goToDetails.bind(this,product.id)}/>
+            return <ProductItem key={product.id} {...product} goToDetails={this.goToDetails.bind(this.product.id)}/>
         });
 
         return (
