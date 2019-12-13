@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from  'react-redux';
-import { getProductDetails } from '../../actions';
+import { clearProductDetails, getProductDetails } from '../../actions';
 import Money from '../general/money'
 
 class ProductDetails extends React.Component {
@@ -9,6 +9,11 @@ class ProductDetails extends React.Component {
         //console.log('Product Details Component Mounted')
         //console.log('id',this.props.match.params.product_id);
         this.props.getProductDetails(this.props.match.params.product_id);
+    }
+
+    componentWillUnmount(){
+        console.log('ProductDetails component about to unmount');
+        this.props.clearProductDetails();
     }
     
     render() {
@@ -44,5 +49,6 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps,{
-getProductDetails: getProductDetails
+getProductDetails: getProductDetails,
+clearProductDetails: clearProductDetails
 })(ProductDetails);
