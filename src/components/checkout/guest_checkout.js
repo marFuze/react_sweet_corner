@@ -1,17 +1,54 @@
 import React from 'react';
+import { Field, reduxForm } from 'redux-form';
+import Input from './input';
 import './checkout.scss';
 
 class GuestCheckout extends React.Component {
 
-    render () {
+    handleGuestCheckout(formValues){
+        console.log('guest checkout form values:', formValues)
 
+    }
+
+    render () {
+        const { handleSubmit } = this.props;
     return (
         <div className="guest-checkout">
         <h1 className="center">Guest Checkout</h1>
+        <form onSubmit={handleSubmit(this.handleGuestCheckout)}>
+        <Field name='firstName' component={Input} label='First Name' />
+        <Field name='lastName' component={Input} label='Last Name' />
+        <Field name='email' component={Input} label='Email' type='email' />
+        <div className="row">
+            <button>Submit Order</button>
+        </div>
+        </form>
         </div>
         );
     }
 }
 
-export default GuestCheckout;
+function validate (formValues){
+
+    const { firstName, lastName, email} = formValues;
+    const errors = {};
+    if (!firstName){
+       errors.name = "Please enter your first name."
+    }
+
+    if (!lastName){
+    errors.name = "Please enter your last name."
+    }
+   
+    if (!email){
+    errors.email = "Please enter your email."
+    }   
+
+    return errors;
+}
+
+export default reduxForm({
+    form:'guest-checkout-form',
+    validate: validate
+})(GuestCheckout);
 

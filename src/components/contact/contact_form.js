@@ -3,8 +3,8 @@ import { Field, reduxForm } from 'redux-form';
 import Input from './input';
 
 class ContactForm extends React.Component {
-    contactUs(fromValues){
-        console.log('Form Values:', fromValues);
+    contactUs(formValues){
+        console.log('Form Values:', formValues);
     }
 
     render(){
@@ -18,42 +18,7 @@ class ContactForm extends React.Component {
                 <Field name='phone' component={Input} label='Phone' type='tel' />
                 <Field name='subject' component={Input} label='Subject' type='text'/>
                 <Field name='message' component={Input} label='Message' type='text'/>
-                {/* <div className='row'>
-                <div className='field'>
-                    <Field name='Name' component='input' type='text' />
-                    <label>Name</label>
-                </div>
-                </div> */}
-
-                {/* <div className='row'>
-                <div className='field'>
-                    <Field name='Email' component='input' type='email' />
-                    <label>Email</label>
-                </div>
-                </div>
-
-                <div className='row'>
-                <div className='field'>
-                    <Field name='Phone' component='input' type='tel' />
-                    <label>Phone</label>
-                </div>
-                </div>
-
-                <div className='row'>
-                <div className='field'>
-                    <Field name='Subject' component='input' type='text' />
-                    <label>Subject</label>
-                </div>
-                </div>
-
-                <div className='row'>
-                <div className='field'>
-                    <Field name='Message' component='input' type='text' />
-                    <label>Message</label>
-                </div>
-                </div> */}
-
-                <div className='row'>
+                    <div className='row'>
                     <button>Send</button>
                 </div>
 
@@ -63,20 +28,20 @@ class ContactForm extends React.Component {
     }
 }
 
-function validate (fromValues){
+function validate (formValues){
 
-    const { name, email, phone, subject, message} = fromValues;
+    const { name, email, phone, subject, message} = formValues;
     const errors = {};
    if (!name){
-       errors.name = "Please enter a name."
+       errors.name = "Please enter your name."
    }
    
    if (!email){
-    errors.email = "Please enter a email."
+    errors.email = "Please enter your email."
     }   
 
     if (!phone){
-    errors.phone = "Please enter a phone."
+    errors.phone = "Please enter your phone number."
     }
 
     if (!subject){
