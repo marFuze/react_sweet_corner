@@ -133,3 +133,41 @@ export function getCartTotals(){
         }
     }
 }
+
+export function createGuestOrder(guest){
+    return async function (dispatch) {
+        try {
+
+            console.log('Create guest order, guest data:', guest);
+
+            const cartToken = localStorage.getItem('sc-cart-token');
+
+            const axiosConfig = {
+                headers: {
+                    'x-cart-token': cartToken
+                }
+            }
+
+            const resp = await axios.post(BASE_URL + '/api/orders/guest', guest, axiosConfig);
+            localStorage.removeItem('sc-cart-token');
+            console.log('Create guest order response:', resp);
+
+            dispatch({
+                type: types.CREATE_GUEST_ORDER,
+                order: {
+                    id: resp.data.id, // The order ID from the server goes here
+                    message: resp.data.message // The message from the server goes here 
+                }
+            
+            });
+
+            return {
+                email: guest.email,
+                orderId: resp.data.id
+            };
+
+        } catch(err) {
+            console.log('Error creating guest order:', err);
+        }
+    }
+}
