@@ -6,7 +6,7 @@ class ScheduleRow extends React.Component {
     render () {
         const { close, day, open } = this.props;
 
-        console.log("row this.props:", this.props);
+        console.log("schedule row this.props:", this.props);
 
         return (
             <tr className="">
