@@ -3,6 +3,11 @@ import './checkout.scss';
 
 class GuestCheckout extends React.Component {
 
+    handleGuestCheckout(formValues){
+        console.log('guest checkout form values:', formValues)
+
+    }
+
     render () {
 
     return (
