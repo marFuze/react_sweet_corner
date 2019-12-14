@@ -77,6 +77,33 @@ export function addItemToCart(productId, quantity){
     }
 }
 
+export const getActiveCart = () => async dispatch => {
+    try {
+        console.log('Get active cart action creator');
+
+        const cartToken = localStorage.getItem('sc-cart-token');
+
+        const axiosConfig = {
+            headers : {
+                'X-Cart-Token': cartToken
+            }
+        }
+
+        const resp = await axios.get(BASE_URL + '/api/cart',axiosConfig
+        );
+
+        console.log('get active cart serv resp', resp);
+
+        dispatch({
+            type: types.GET_ACTIVE_CART,
+            cart: resp.data
+        })
+
+    } catch(err) {
+        console.log('Error getting active cart', err);
+    }
+}
+
 
 export function getCartTotals(){
     return async function (dispatch) {
