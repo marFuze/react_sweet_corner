@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getActiveCart } from '../../actions';
 import './cart.scss';
 import CartRow from './cart-row';
+import { Link } from 'react-router-dom';
 
 class Cart extends React.Component {
     
@@ -24,8 +25,8 @@ class Cart extends React.Component {
         return <CartRow key={element.itemId} index={index} {...element} />
     });
         return (
-            <div>
-             <table className=''>
+            <div className='cart-container'>
+             <table className='cart-table'>
             <thead>
                 <tr>
                     <th>Product</th>
@@ -38,6 +39,7 @@ class Cart extends React.Component {
                 {rowElements}
             </tbody>
         </table>
+            <button><Link to="/checkout/guest">Checkout As Guest</Link></button>
             </div>
         )
     }
