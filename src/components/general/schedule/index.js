@@ -4,6 +4,8 @@ import { getScheduleData } from '../../../actions';
 import ScheduleRow from './schedule-row';
 
 class ScheduleTable extends React.Component {
+   
+    
 
     componentDidMount(){
         this.props.getScheduleData();
