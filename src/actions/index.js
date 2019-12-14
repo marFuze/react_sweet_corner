@@ -47,6 +47,37 @@ export function clearProductDetails(){
         }
     }
 
+export function addItemToCart(productId, quantity){
+    return async function (dispatch) {
+        try {
+            console.log('From Action Creator, quantity: ',quantity ,'Product ID:', productId);
+
+            const cartToken = localStorage.getItem('sc-cart-token');
+
+            const axiosConfig = {
+                headers: {
+                    'x-cart-token': cartToken
+                }
+            }
+
+            const resp = await axios.post(BASE_URL + '/api/cart/items/' + productId,{
+                quantity: quantity
+             },axiosConfig);
+
+             localStorage.setItem('sc-cart-token', resp.data.cartToken);
+             //console.log('add to cart resp', resp);
+             dispatch({
+                type: types.ADD_ITEM_TO_CART,
+                carTotal: resp.data.total
+            });
+
+        } catch(err){
+            console.log('Error adding item to cart', err);
+        } 
+    }
+}
+
+
 export function getCartTotals(){
     return async function (dispatch) {
         try {

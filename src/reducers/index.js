@@ -5,6 +5,7 @@ import productsReducer from './products_reducer';
 import cartReducer from './cart_reducer';
 
 const rootReducer = combineReducers({
+    cart: cartReducer,
     form: formReducer,
     schedules: scheduleReducer,
     products: productsReducer,
