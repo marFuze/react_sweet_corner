@@ -3,7 +3,7 @@ import types from '../actions/types';
 const DEFAULT_STATE = {
    total: null,
    cartId: null,
-   items: null,
+   items: [],
    total: null
 };
 
