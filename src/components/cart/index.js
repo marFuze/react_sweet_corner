@@ -1,17 +1,10 @@
 import React from 'react';
-import './cart.scss';
 import { connect } from 'react-redux';
 import { getActiveCart } from '../../actions';
+import './cart.scss';
 
 class Cart extends React.Component {
-    constructor(props){
-        super(props);
-
-        this.state = {
-
-        };
-
-    }
+    
 
     componentDidMount(){
         this.props.getActiveCart();
@@ -19,7 +12,7 @@ class Cart extends React.Component {
 
     render() {
 
-        console.log('Cart Items:', this.props.cartItems);
+        //console.log('Cart Items:', this.props.cartItems);
 
         return (
             <div>
