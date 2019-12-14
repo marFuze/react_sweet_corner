@@ -34,7 +34,7 @@ class ProductDetails extends React.Component {
 
     handleAddToCart() {
         const { id } = this.props.details;
-    const { quantity } = this.state;
+        const { quantity } = this.state;
 
     //console.log(`Add ${quantity} items to cart, with product ID: ${id}`);
     this.props.addItemToCart(id,quantity);

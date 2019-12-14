@@ -68,7 +68,7 @@ export function addItemToCart(productId, quantity){
              //console.log('add to cart resp', resp);
              dispatch({
                 type: types.ADD_ITEM_TO_CART,
-                carTotal: resp.data.total
+                cartTotal: resp.data.total
             });
 
         } catch(err){
@@ -77,9 +77,10 @@ export function addItemToCart(productId, quantity){
     }
 }
 
-export const getActiveCart = () => async dispatch => {
+export function getActiveCart() {
+    return async function (dispatch) {
     try {
-        console.log('Get active cart action creator');
+        //console.log('Get active cart action creator');
 
         const cartToken = localStorage.getItem('sc-cart-token');
 
@@ -92,7 +93,7 @@ export const getActiveCart = () => async dispatch => {
         const resp = await axios.get(BASE_URL + '/api/cart',axiosConfig
         );
 
-        console.log('get active cart serv resp', resp);
+        //console.log('get active cart serv resp', resp);
 
         dispatch({
             type: types.GET_ACTIVE_CART,
@@ -102,6 +103,7 @@ export const getActiveCart = () => async dispatch => {
     } catch(err) {
         console.log('Error getting active cart', err);
     }
+}
 }
 
 
@@ -118,6 +120,8 @@ export function getCartTotals(){
             }
 
             const resp = await axios.get(BASE_URL + '/api/cart/totals',axiosConfig);
+
+            //console.log('Get cart totals action creator', resp);
 
             dispatch({
                 type: types.GET_CART_TOTALS,
