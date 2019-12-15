@@ -10,7 +10,8 @@ import Services from './services';
 import Products from './products';
 import ProductDetails from './products/product_details';
 import Cart from './cart';
-import GuestCheckout from './checkout/guest_checkout'
+import GuestCheckout from './checkout/guest_checkout';
+import GuestOrderDetails from './orders/guest_order_details';
 
 const App = () => (
    <div className='app'>
@@ -20,6 +21,7 @@ const App = () => (
            <Route path='/cart' component={Cart} />
            <Route path='/contact' component={Contact} />
            <Route path='/checkout/guest' component={GuestCheckout} />
+           <Route path='/orders/guest/:order_id' component={GuestOrderDetails} />
            <Route exact path='/' component={Home} />
            <Route path='/services' component={Services} />
            <Route exact path='/products' component={Products} />
