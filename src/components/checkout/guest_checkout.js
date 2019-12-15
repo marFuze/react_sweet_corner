@@ -7,9 +7,10 @@ import { createGuestOrder } from '../../actions';
 
 class GuestCheckout extends React.Component {
 
-    handleGuestCheckout(formValues){
-        //console.log('guest checkout form values:', formValues)
-        this.props.createGuestOrder(formValues);
+    async handleGuestCheckout(formValues){
+        const orderInfo = await this.props.createGuestOrder(formValues);
+        const url = '/orders/guest/' + orderInfo.orderId + '?email=' + orderInfo.email;
+        this.props.history.push(url);
     }
 
     render () {

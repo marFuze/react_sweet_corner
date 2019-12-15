@@ -12,6 +12,8 @@ export default (state = DEFAULT_STATE, action) => {
     switch(action.type){
         case types.ADD_ITEM_TO_CART:
             return {...state, total: action.cartTotal}
+        case types.CREATE_GUEST_ORDER:
+            return {...state, total: null, cartId: null, items: [], total: null}
         case types.GET_ACTIVE_CART:
             //console.log('Cart Reducer Action:', action);
             return {...state, cartId: action.cart.cartId, items: action.cart.items, total: action.cart.total}

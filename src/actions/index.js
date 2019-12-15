@@ -50,8 +50,7 @@ export function clearProductDetails(){
 export function addItemToCart(productId, quantity){
     return async function (dispatch) {
         try {
-            console.log('From Action Creator, quantity: ',quantity ,'Product ID:', productId);
-
+           
             const cartToken = localStorage.getItem('sc-cart-token');
 
             const axiosConfig = {
@@ -65,7 +64,7 @@ export function addItemToCart(productId, quantity){
              },axiosConfig);
 
              localStorage.setItem('sc-cart-token', resp.data.cartToken);
-             //console.log('add to cart resp', resp);
+            
              dispatch({
                 type: types.ADD_ITEM_TO_CART,
                 cartTotal: resp.data.total
@@ -80,8 +79,7 @@ export function addItemToCart(productId, quantity){
 export function getActiveCart() {
     return async function (dispatch) {
     try {
-        //console.log('Get active cart action creator');
-
+      
         const cartToken = localStorage.getItem('sc-cart-token');
 
         const axiosConfig = {
@@ -92,8 +90,6 @@ export function getActiveCart() {
 
         const resp = await axios.get(BASE_URL + '/api/cart',axiosConfig
         );
-
-        //console.log('get active cart serv resp', resp);
 
         dispatch({
             type: types.GET_ACTIVE_CART,
@@ -121,8 +117,6 @@ export function getCartTotals(){
 
             const resp = await axios.get(BASE_URL + '/api/cart/totals',axiosConfig);
 
-            //console.log('Get cart totals action creator', resp);
-
             dispatch({
                 type: types.GET_CART_TOTALS,
                 total: resp.data.total
@@ -138,8 +132,6 @@ export function createGuestOrder(guest){
     return async function (dispatch) {
         try {
 
-            console.log('Create guest order, guest data:', guest);
-
             const cartToken = localStorage.getItem('sc-cart-token');
 
             const axiosConfig = {
@@ -150,7 +142,6 @@ export function createGuestOrder(guest){
 
             const resp = await axios.post(BASE_URL + '/api/orders/guest', guest, axiosConfig);
             localStorage.removeItem('sc-cart-token');
-            console.log('Create guest order response:', resp);
 
             dispatch({
                 type: types.CREATE_GUEST_ORDER,
@@ -158,7 +149,6 @@ export function createGuestOrder(guest){
                     id: resp.data.id, // The order ID from the server goes here
                     message: resp.data.message // The message from the server goes here 
                 }
-            
             });
 
             return {
