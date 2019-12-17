@@ -22,6 +22,12 @@ class GuestOrderDetails extends React.Component {
 
     render () {
 
+        const { details } = this.props;
+
+        // const rowElements = details.map((element,index) => {
+        //     return <ProductItem key={element.id} {...element} />
+        // });
+
         console.log('redux state orders details:', this.props);
         return (
             <div>
