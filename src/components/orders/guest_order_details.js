@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { getGuestOrderDetails } from '../../actions';
 import { queryToObject } from '../../helpers';
 import GuestOrderDetailsRow from './guest_order_details_row';
+import './orders.scss';
+import Money from '../general/money';
 
 
 class GuestOrderDetails extends React.Component {
@@ -22,7 +24,9 @@ class GuestOrderDetails extends React.Component {
 
     render () {
 
-        const { items } = this.props.details;
+        const { details } = this.props
+
+        const { items, status, id, createdAt, itemCount, total } = details;
 
         if(!items){
             return(
@@ -39,6 +43,15 @@ class GuestOrderDetails extends React.Component {
         return (
             <div>
                 <h1 className="center">Guest Order Details</h1>
+                <h1 className="center">Status: {status}</h1>
+                <h3 className="center">Order #: {id}</h3>
+                <h5 className="center">** Save order number to check order status in the future **</h5>
+
+                <h4>Order Placed: {createdAt}</h4>
+                <h4>Order Total Items: {itemCount}</h4>
+                <h4>Order Total Cost: <Money pennies={total}/></h4>
+
+                <h3>Order Items:</h3>
                 <table className='cart-table'>
             <thead>
                 <tr>
@@ -51,7 +64,17 @@ class GuestOrderDetails extends React.Component {
             <tbody>
                 {rowElements}
             </tbody>
+            <tfoot>
+            <tr>
+            <td> <h3>Order Totals:</h3></td>
+            <td> <h3>{itemCount}</h3></td>
+            <td> <h3><Money pennies={total}/></h3></td>
+            </tr>
+            </tfoot>
+
         </table>
+           
+            
             </div>
         )
     }

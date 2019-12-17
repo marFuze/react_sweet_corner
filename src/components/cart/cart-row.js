@@ -1,20 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Money from '../general/money';
 
 class CartRow extends React.Component {
 
     render () {
         const { name, each, quantity, total } = this.props;
 
-        console.log("cart row this.props:", this.props);
-
         return (
             <tr className="">
                 
                 <td>{ name } </td>
-                <td>{ each }</td>
+                <td><Money pennies={each}/></td>
                 <td>{ quantity }</td>
-                <td>{ total }</td>
+                <td><Money pennies={total}/></td>
             </tr>
         );
     }

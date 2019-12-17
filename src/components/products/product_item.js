@@ -9,7 +9,7 @@ export default (props) => {
             <h1>{props.name}</h1>
             <img src={props.thumbnail.url} alt={props.thumbnail.altText}/>
     <p>{props.caption}</p>
-    <Money pennies={props.cost}/>
+    <h3><Money pennies={props.cost}/></h3>
         </div>
        
     )

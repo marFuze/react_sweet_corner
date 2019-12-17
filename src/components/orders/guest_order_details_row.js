@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Money from '../general/money';
 
 class GuestOrderDetailsRow extends React.Component {
 
@@ -10,9 +11,9 @@ class GuestOrderDetailsRow extends React.Component {
             <tr className="">
                 
                 <td>{product.name}</td>
-                <td>{each}</td>
+                <td><Money pennies={each}/></td>
                 <td>{quantity}</td>
-                <td>{total}</td>
+                <td><Money pennies={total}/></td>
             </tr>
         );
     }
