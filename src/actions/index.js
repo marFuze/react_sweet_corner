@@ -168,7 +168,7 @@ export function getGuestOrderDetails(orderId, email){
     
             const resp = await axios.get(BASE_URL + '/api/orders/guest/' + orderId + '?email=' + email);
             
-            console.log('action creator getGuestOrderDetails:', resp.data);
+            //console.log('action creator getGuestOrderDetails:', resp.data);
 
             dispatch({
                 type:types.GET_GUEST_ORDER_DETAILS,

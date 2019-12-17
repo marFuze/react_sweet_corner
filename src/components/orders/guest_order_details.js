@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getGuestOrderDetails } from '../../actions';
 import { queryToObject } from '../../helpers';
+import GuestOrderDetailsRow from './guest_order_details_row';
 
 
 class GuestOrderDetails extends React.Component {
@@ -17,24 +18,44 @@ class GuestOrderDetails extends React.Component {
 
         this.props.getGuestOrderDetails(orderId,email);
 
-        
     }
 
     render () {
 
-        const { details } = this.props;
+        const { items } = this.props.details;
 
-        // const rowElements = details.map((element,index) => {
-        //     return <ProductItem key={element.id} {...element} />
-        // });
+        if(!items){
+            return(
+                <div className="product-details">
+                <h1>Loading Checkout Items</h1>
+                </div>
+                )
+        } else {
 
-        console.log('redux state orders details:', this.props);
+        const rowElements = items.map((element) => {
+            return <GuestOrderDetailsRow key={element.id} {...element} />
+        });
+  
         return (
             <div>
                 <h1 className="center">Guest Order Details</h1>
+                <table className='cart-table'>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Each</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {rowElements}
+            </tbody>
+        </table>
             </div>
         )
     }
+}
 }
 
 function mapStateToProps(state){
