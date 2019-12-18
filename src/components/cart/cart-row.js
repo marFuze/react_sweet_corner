@@ -5,11 +5,12 @@ import Money from '../general/money';
 class CartRow extends React.Component {
 
     render () {
-        const { name, each, quantity, total } = this.props;
+        const { thumbnail, name, each, quantity, total } = this.props;
+        console.log('cart row props:', this.props);
 
         return (
             <tr className="">
-                
+                <td><img className='cart-thumbnail' src={thumbnail.url}></img></td>
                 <td>{ name } </td>
                 <td><Money pennies={each}/></td>
                 <td>{ quantity }</td>

@@ -24,6 +24,7 @@ class Cart extends React.Component {
              <table className='cart-table'>
             <thead>
                 <tr>
+                    <th></th>
                     <th>Product</th>
                     <th>Each</th>
                     <th>Quantity</th>
@@ -34,7 +35,7 @@ class Cart extends React.Component {
                 {rowElements}
             </tbody>
         </table>
-            <button><Link to="/checkout/guest">Checkout As Guest</Link></button>
+            <button><Link className='link-button-text' to="/checkout/guest">Checkout As Guest</Link></button>
             </div>
         )
     }

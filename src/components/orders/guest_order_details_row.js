@@ -9,7 +9,7 @@ class GuestOrderDetailsRow extends React.Component {
     
         return (
             <tr className="">
-                
+                <td><img className='guest-detail-thumbnail' src={product.thumbnail.url}></img></td>
                 <td>{product.name}</td>
                 <td><Money pennies={each}/></td>
                 <td>{quantity}</td>

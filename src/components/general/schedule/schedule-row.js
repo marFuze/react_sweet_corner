@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './schedule.scss'
 
 class ScheduleRow extends React.Component {
 

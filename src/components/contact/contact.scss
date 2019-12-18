@@ -4,22 +4,32 @@
 
 .name {
     background-color: #e86b35;
+    width: 400px;
+    height: 25px;
 }
 
 .email {
     background-color: #f6b53e;
+    width: 400px;
+    height: 25px;
 }
 
 .phone {
     background-color: #06b4af;
+    width: 400px;
+    height: 25px;
 }
 
 .subject {
     background-color: #e86b35;
+    width: 400px;
+    height: 25px;
 }
 
 .message {
     background-color: #f6b53e;
+    width: 400px;
+    height: 100px;
 }
 
 .send {
@@ -34,4 +44,8 @@
 
 .schedule-row {
     background-color: #f6ede6;
+}
+
+Field {
+
 }

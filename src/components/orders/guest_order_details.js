@@ -24,7 +24,7 @@ class GuestOrderDetails extends React.Component {
 
     render () {
 
-        const { details } = this.props
+        const { details } = this.props;
 
         const { items, status, id, createdAt, itemCount, total } = details;
 
@@ -55,6 +55,7 @@ class GuestOrderDetails extends React.Component {
                 <table className='cart-table'>
             <thead>
                 <tr>
+                    <th></th>
                     <th>Product</th>
                     <th>Each</th>
                     <th>Quantity</th>
@@ -66,6 +67,7 @@ class GuestOrderDetails extends React.Component {
             </tbody>
             <tfoot>
             <tr>
+                <td></td>
             <td> <h3>Order Totals:</h3></td>
             <td> <h3>{itemCount}</h3></td>
             <td> <h3><Money pennies={total}/></h3></td>
