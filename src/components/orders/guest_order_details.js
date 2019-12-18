@@ -41,7 +41,7 @@ class GuestOrderDetails extends React.Component {
         });
   
         return (
-            <div>
+            <div className="guest-order-details-container">
                 <h1 className="center">Guest Order Details</h1>
                 <h1 className="center">Status: {status}</h1>
                 <h3 className="center">Order #: {id}</h3>
