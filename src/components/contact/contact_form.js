@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import Input from './input';
+import './contact.scss';
 
 class ContactForm extends React.Component {
     contactUs(formValues){
@@ -13,13 +14,13 @@ class ContactForm extends React.Component {
             <div><h1>Contact Form</h1>
 
             <form onSubmit={handleSubmit(this.contactUs)}>
-                <Field name='name' component={Input} label='Name' />
+                <Field name='name' component={Input} label='Name'/>
                 <Field name='email' component={Input} label='Email' type='email'/>
                 <Field name='phone' component={Input} label='Phone' type='tel' />
                 <Field name='subject' component={Input} label='Subject' type='text'/>
                 <Field name='message' component={Input} label='Message' type='text'/>
                     <div className='row'>
-                    <button>Send</button>
+                    <button className='send'>Send</button>
                 </div>
 
             </form>

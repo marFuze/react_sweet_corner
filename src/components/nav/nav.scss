@@ -3,6 +3,7 @@
     left: 250px;
     
     li {
+      font-size: large;
       display: inline-block;
       text-transform: capitalize;
       text-align: center;
@@ -10,11 +11,17 @@
       cursor: pointer;
       font-family: sans-serif;
       width: 10%;
-      text-decoration: none;
+      // text-decoration: none;
         
     }
 
+
     li:hover {
         color: orange;
+      }
+
+      a {
+        color: #754b23;
+        text-decoration: none;
       }
 }

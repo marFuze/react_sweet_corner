@@ -9,11 +9,11 @@ class ScheduleRow extends React.Component {
         console.log("schedule row this.props:", this.props);
 
         return (
-            <tr className="">
+            <tr className="schedule-row">
                 
                 <td>{ day } </td>
-                <td>{ open }</td>
-                <td>{ close }</td>
+                <td>{ open } - {close}</td>
+                
             </tr>
         );
     }

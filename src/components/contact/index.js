@@ -5,7 +5,7 @@ import Schedule from '../general/schedule/index.js'
 
 export default props => {
     return (
-        <div>
+        <div className='contact-form-container'>
             <ContactForm />
             <Schedule />
         </div>

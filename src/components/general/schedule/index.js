@@ -24,12 +24,8 @@ class ScheduleTable extends React.Component {
     
     return (
         <table className=''>
+            <h3>For phone orders, our work schedule is:</h3>
             <thead>
-                <tr>
-                    <th>Day</th>
-                    <th>Open</th>
-                    <th>Close</th>
-                </tr>
             </thead>
             <tbody>
                 {rowElements}
