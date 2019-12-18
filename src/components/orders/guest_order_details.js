@@ -68,6 +68,7 @@ class GuestOrderDetails extends React.Component {
             <tfoot>
             <tr>
                 <td></td>
+                <td></td>
             <td> <h3>Order Totals:</h3></td>
             <td> <h3>{itemCount}</h3></td>
             <td> <h3><Money pennies={total}/></h3></td>
