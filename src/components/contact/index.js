@@ -2,6 +2,8 @@ import React from 'react';
 import './contact.scss';
 import ContactForm from './contact_form';
 import Schedule from '../general/schedule/index.js'
+import UpDots from './up-dots';
+import DownDots from './down-dots';
 
 export default props => {
     return (
@@ -16,11 +18,15 @@ export default props => {
                 <p>Our expert bakers are waiting to create an unique cupcake
                 bursting with freshness and flavor just for you. Our management
                 team are also waiting for their next event to organize.</p>
+                <UpDots />
                 </div>
                 <div className='contact-form'><ContactForm /></div>
         </div>
 
-        <div className='schedule-table'><Schedule /></div>
+        <div className='schedule-table-container'>
+        <div className='schedule-table'><Schedule /></div> 
+        <div className='downDots'><DownDots /></div>
+        </div>
         </div>
     );
 }

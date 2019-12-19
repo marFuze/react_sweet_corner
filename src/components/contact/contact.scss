@@ -7,6 +7,23 @@ a {
     color: #06b4af;
 }
 
+.contact-main {
+    width: 50%;
+    display: table-cell;
+    padding: 30px;
+}
+
+.upDots {
+    position: absolute;
+    left: 250px;
+}
+
+.contact-form {
+    width: 50%;
+    padding: 30px;
+    display: table-cell;
+    padding: 30px;
+
 .name {
     background-color: #e86b35;
     width: 400px;
@@ -42,35 +59,37 @@ a {
     color: white;
 }
 
-.contact-form-container {
-    
-    margin-bottom: 20px;
+}
 }
 
 
 
-}
+.schedule-table-container {
 
-.contact-main {
-    width: 50%;
-    display: table-cell;
-    padding: 30px;
-}
-
-.contact-form {
-    width: 50%;
-    display: table-cell;
-    padding: 30px;
-}
-
-.schedule-table {
-    width: 50%;
-    display: table-cell;
-    padding: 30px;
     color: #754b23;
     font-family: sans-serif;
 
+    .schedule-table {
+    
+    display: table-cell;
+    width: 50%;
+    margin: 30px;
+    padding: 30px;
+    }
+
+    .downDots {
+        display: table-cell;
+        width: 50%;
+        position: absolute;
+        left: 300px;
+        top: 630px;
+    }
+
     .schedule-row {
         background-color: #f6ede6;
+        padding: 30px;
+        color: #754b23;
+        font-family: sans-serif;
+        text-align: center;
     }
 }
