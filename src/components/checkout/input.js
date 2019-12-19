@@ -6,7 +6,7 @@ export default props => {
     return (
         <div className="row">
             <div className="">
-                <input className={input.name} type={type} id={id} {...input}/>
+                <input className={`${input.name}-checkout`} type={type} id={id} {...input}/>
                 <label htmlFor={id}>{label}</label>
                 <p className=''>{meta.touched && meta.error}</p>
             </div>
