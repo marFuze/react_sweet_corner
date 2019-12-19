@@ -27,6 +27,12 @@ class GuestOrderDetails extends React.Component {
         const { details } = this.props;
 
         const { items, status, id, createdAt, itemCount, total } = details;
+       
+
+        const orderDateTime = new Date(createdAt);
+        console.log('orderDateTime', orderDateTime);
+        const orderDate = orderDateTime.toLocaleDateString();
+        const orderTime = orderDateTime.toLocaleTimeString();
 
         if(!items){
             return(
@@ -47,7 +53,7 @@ class GuestOrderDetails extends React.Component {
                 <h3 className="center">Order #: {id}</h3>
                 <h5 className="center">** Save order number to check order status in the future **</h5>
 
-                <h4>Order Placed: {createdAt}</h4>
+                <h4>Order Placed: {`${orderDate} at ${orderTime} (local time)`}</h4>
                 <h4>Order Total Items: {itemCount}</h4>
                 <h4>Order Total Cost: <Money pennies={total}/></h4>
 

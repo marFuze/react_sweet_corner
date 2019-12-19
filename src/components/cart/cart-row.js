@@ -6,8 +6,7 @@ class CartRow extends React.Component {
 
     render () {
         const { thumbnail, name, each, quantity, total } = this.props;
-        console.log('cart row props:', this.props);
-
+        
         return (
             <tr className="">
                 <td><img className='cart-thumbnail' src={thumbnail.url}></img></td>
