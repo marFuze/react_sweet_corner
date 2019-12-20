@@ -12,14 +12,9 @@ class Cart extends React.Component {
         this.props.getActiveCart();
     }
 
-    render() {
+    render() {        
+        const { cartItems } = this.props;
 
-        console.log('Cart Items:', this.props);
-        
-         const { cartItems } = this.props;
-
-         console.log ('cartitems destructured', cartItems)
-    
         const rowElements = cartItems.map((element, index) => {
      
         return <CartRow key={element.itemId} index={index} {...element} />
@@ -29,6 +24,7 @@ class Cart extends React.Component {
              <table className='cart-table'>
             <thead>
                 <tr>
+                    <th></th>
                     <th>Product</th>
                     <th>Each</th>
                     <th>Quantity</th>
@@ -39,14 +35,14 @@ class Cart extends React.Component {
                 {rowElements}
             </tbody>
         </table>
-            <button><Link to="/checkout/guest">Checkout As Guest</Link></button>
+            <button><Link className='link-button-text' to="/checkout/guest">Checkout As Guest</Link></button>
             </div>
         )
     }
 }
 
 function mapStateToProps(state){
-    console.log('cartItems state', state);
+    
     return {
         cartItems: state.cart.items
     }

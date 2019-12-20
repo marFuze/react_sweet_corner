@@ -1,19 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './schedule.scss'
 
 class ScheduleRow extends React.Component {
 
     render () {
         const { close, day, open } = this.props;
 
-        console.log("schedule row this.props:", this.props);
-
         return (
-            <tr className="">
+            <tr className="schedule-row">
                 
                 <td>{ day } </td>
-                <td>{ open }</td>
-                <td>{ close }</td>
+                <td>{ open } - {close}</td>
+                
             </tr>
         );
     }

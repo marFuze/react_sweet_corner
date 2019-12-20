@@ -14,14 +14,12 @@ class ProductDetails extends React.Component {
         this.incrementQuantity = this.incrementQuantity.bind(this);
         this.decrementQuantity = this.decrementQuantity.bind(this);
         this.handleAddToCart = this.handleAddToCart.bind(this);
-
     }
 
     incrementQuantity() {
         this.setState({
             quantity: this.state.quantity + 1
         });
-
     }
 
     decrementQuantity() {
@@ -36,25 +34,21 @@ class ProductDetails extends React.Component {
         const { id } = this.props.details;
         const { quantity } = this.state;
 
-    //console.log(`Add ${quantity} items to cart, with product ID: ${id}`);
     await this.props.addItemToCart(id,quantity);
     this.props.history.push('/cart');
     }
     
     componentDidMount() {
-        //console.log('Product Details Component Mounted')
-        //console.log('id',this.props.match.params.product_id);
+        
         this.props.getProductDetails(this.props.match.params.product_id);
     }
 
     componentWillUnmount(){
-        console.log('ProductDetails component about to unmount');
         this.props.clearProductDetails();
     }
     
     render() {
         const { details } = this.props
-        //console.log('props:', this.props);
         if (!details){ 
             return(
             <div className="product-details">
@@ -88,7 +82,6 @@ class ProductDetails extends React.Component {
     }
 
 function mapStateToProps(state){
-    //console.log('product details state', state);
     return {
         details: state.products.details
     }

@@ -161,3 +161,20 @@ export function createGuestOrder(guest){
         }
     }
 }
+
+export function getGuestOrderDetails(orderId, email){
+    return async function (dispatch) {
+        try {
+    
+            const resp = await axios.get(BASE_URL + '/api/orders/guest/' + orderId + '?email=' + email);
+            
+            dispatch({
+                type:types.GET_GUEST_ORDER_DETAILS,
+                order: resp.data
+            });
+
+        } catch(err) {
+            console.log('Error creating guest order:', err);
+        }
+    }
+}

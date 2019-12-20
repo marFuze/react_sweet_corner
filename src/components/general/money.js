@@ -7,6 +7,6 @@ export default props => {
         currency: 'USD',
       });
     return (
-        <h3>{moneyFormat}</h3>
-    )
+        <p>{moneyFormat}</p>
+        )
 }

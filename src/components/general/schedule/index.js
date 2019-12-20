@@ -23,18 +23,17 @@ class ScheduleTable extends React.Component {
     });
     
     return (
+        <div>
+        <h3>For phone orders, our work schedule is:</h3>
         <table className=''>
+            
             <thead>
-                <tr>
-                    <th>Day</th>
-                    <th>Open</th>
-                    <th>Close</th>
-                </tr>
             </thead>
             <tbody>
                 {rowElements}
             </tbody>
         </table>
+        </div>
     );
     }
 }
